@@ -1,330 +1,326 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
-/*_______COLORS________*/
-/*_______FONT SIZE______*/
-/*________MIXIN_______*/
-/*_____________Blueprints_____________*/
-h2 {
-  font-size: 30px;
-  line-height: 1.5;
-  text-align: justify;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/*_____________GENERAL SETTINGS__________________*/
+:root{
+    --bg-col: rgb(43, 43, 145);
+    --theme-col: rgb(24, 24, 94);
+    --a-col: rgb(250, 83, 6);
+    --font-col: rgb(245, 239, 239);
+
+    --font-xl: clamp(1.875rem, 0rem + 6.6667vw, 5rem); 
+    --font-l: clamp(1.25rem, 0.875rem + 1.3333vw, 1.875rem);
+    --font-m: clamp(1rem, 0.6625rem + 1.2vw, 1.5625rem);
+    --font-s: clamp(0.75rem, 0.6rem + 0.5333vw, 1rem);
 }
 
-h2 span {
-  color: black;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    color: var(--font-col);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
-h3 {
-  font-size: 25px;
+body{
+    width: 100%;
+    background: var(--bg-col);
 }
 
-h3 span {
-  font-style: italic;
+
+/*_____________BUILDING BLOCKS SETTINGS__________________*/
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.theme-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 28%;
-  height: 100%;
-  background: #fa5306;
-  border-radius: 10px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+h1{
+    font-size: var(--font-xl);
+    color: black;
 }
 
-.theme-button:nth-child(2) {
-  margin: 0 auto;
+h2{
+    font-size: var(--font-l);
+    line-height: 1.5;
+    text-align: justify;
 }
 
-.theme-button.donate {
-  cursor: pointer;
-  border: 2px solid white;
-  background: none;
+h2 span{
+    color: black;
 }
 
-.theme-button:hover {
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
+h3{
+    font-size: var(--font-m);
 }
 
-.paypal {
-  position: fixed;
-  z-index: 100;
-  height: 100%;
-  width: 30%;
-  top: 0;
-  left: 0;
-  background: white;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+h3 span{
+    font-style: italic;
 }
 
-.paypal.active {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+p{
+    font-size: var(--font-s);
 }
 
-.paypal #close {
-  position: absolute;
-  color: black;
-  top: 5%;
-  right: 5%;
-  cursor: pointer;
+.theme-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 28%;
+    height: 100%;
+    background: var(--a-col);
+    border: 2px solid var(--a-col);
+    border-radius: 10px;
+    transition: all 0.2s;
+    font-size: var(--font-s);
 }
 
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #2b2b91;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 10vh;
-  padding: 0 5%;
-  z-index: 10;
+.theme-button:nth-child(2){
+    margin: 0 auto;
 }
 
-nav .logo, nav a {
-  font-size: 18px;
-  font-weight: 600;
+.theme-button.donate{
+    cursor: pointer;
+    border: 2px solid white;
+    background: var(--bg-col);
 }
 
-nav .logo:hover, nav a:hover {
-  color: #fa5306;
+.theme-button:hover{
+    transform: rotate(-5deg);
+    border: 2px solid var(--font-col);
+    box-shadow: 11px 11px 13px -6px rgb(29, 29, 29);
 }
 
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 30vw;
-  height: 100%;
+
+/*_____________MENU/NAVBAR SETTINGS__________________*/
+.toggle{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 100;
+    cursor: pointer;
+    opacity: 0;
 }
 
-nav ul a:nth-child(2) {
-  margin: 0 5vw;
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-col);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    padding: 0 5%;
+    z-index: 10;
+    transition: all 0.3s;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
-  text-decoration: none;
-  color: #f5efef;
-  letter-spacing: 1px;
-  line-height: 1.5;
-  scroll-behavior: smooth;
+nav:hover{
+    box-shadow: 0px 11px 13px -6px rgb(29, 29, 29);
+    background: var(--theme-col);
+}
+    
+nav .logo, nav ul a{
+    font-size: 18px;
+    font-weight: 600;
 }
 
-body {
-  width: 100%;
-  background: #2b2b91;
+nav .logo a:hover, nav ul a:hover{
+    color: var(--a-col);
 }
 
-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+nav ul{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 40vw;
+    height: 100%;
 }
 
-.intro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 5vh;
-  width: 70vw;
-  height: 80vh;
+nav ul a:nth-child(2){
+    margin: 0 5vw;
 }
 
-.intro h1 {
-  font-size: 80px;
-  color: black;
+
+/*_____________LANDING PAGE SETTINGS__________________*/
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    width: 70vw;
+    height: 80vh;
 }
 
-.intro h1 span {
-  color: white;
+.intro .explore{
+    position: relative;
+    background: var(--a-col);
+    border: 4px solid var(--a-col);
+    padding: 1.5rem 2.5rem;
+    border-radius: 20px;;
+    font-size: var(--font-m);
+    font-weight: 600;
+    transition: all 0.2s;
 }
 
-.intro .explore {
-  position: relative;
-  background: #fa5306;
-  padding: 1.5rem 2.5rem;
-  border-radius: 20px;
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+.intro .explore:hover{
+    transform: rotate(-5deg);
+    border: 4px solid var(--font-col);
+    box-shadow: 11px 11px 13px -6px rgb(29, 29, 29);
 }
 
-.intro .explore:hover {
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
+
+/*_____________THEMES DOWNLOAD SETTINGS__________________*/
+#themes{
+    height: 150vh;
 }
 
-#themes {
-  height: 150vh;
+.themes{
+    position: relative;
+    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 100vh;
 }
 
-#themes .themes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 2%;
-  position: relative;
-  width: 70vw;
-  height: 80%;
+.themes h3{
+    margin-bottom: 3%;
 }
 
-#themes .themes h3 {
-  margin-bottom: 3%;
+.themes .theme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    background: var(--theme-col);
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all 0.3s;
 }
 
-#themes .themes .theme {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 40vh;
-  background: #1f1f6a;
-  border: 2px solid white;
-  border-radius: 10px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.themes .theme:hover{
+    transform: translateY(-5px);
+    box-shadow: 11px 11px 13px -6px rgb(29, 29, 29);
 }
 
-#themes .themes .theme:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-  -webkit-box-shadow: 11px 11px 13px -6px #1d1d1d;
-          box-shadow: 11px 11px 13px -6px #1d1d1d;
+.themes .theme .photo{
+    position: relative;
+    width: 50%;
+    height: 100%;
 }
 
-#themes .themes .theme:hover .photo .overlay {
-  opacity: 1;
+.themes .theme .photo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-#themes .themes .theme .photo {
-  position: relative;
-  width: 50%;
-  height: 100%;
+.themes .theme .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding: 0 2rem;
+    width: 50%;
+    height: 100%;
 }
 
-#themes .themes .theme .photo img, #themes .themes .theme .photo .overlay {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+.themes .theme .description .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20%;
 }
 
-#themes .themes .theme .photo .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+
+/*_____________CONTACT SETTINGS__________________*/
+.btn-copy{
+    cursor: pointer;
+    color: var(--a-col);
+    transition: all 0.3s;
 }
 
-#themes .themes .theme .description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10%;
-  padding: 0 2rem;
-  width: 50%;
-  height: 100%;
+.btn-copy:hover{
+    transform: scale(1.1);
 }
 
-#themes .themes .theme .description .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 20%;
+
+/*_____________RESPONSIVE SETTINGS__________________*/
+@media (max-width: 1200px){
+    .toggle{
+        opacity: 1;
+        transition: all 0.3s;
+        font-weight: 600;
+    }
+
+    .toggle:hover{
+        color: var(--a-col);
+    }
+
+    nav{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: var(--theme-col);
+        transform: translateY(-100%);
+        transition: all 0.3s;
+    }
+
+    nav.active{
+        transform: translateY(0);
+    }
+
+    nav .logo{
+        position: absolute;
+        top: 30%;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav .logo a, nav ul a{
+        font-size: var(--font-l);
+    }
 }
-/*# sourceMappingURL=style.css.map */
+
+@media (max-width: 1024px){
+
+
+    .intro .explore{
+        padding: 1rem 1.5rem;
+    }
+
+    .photo{
+        display: none;
+    }
+
+    .themes .theme .description{
+        width: 100%;
+    }
+
+}

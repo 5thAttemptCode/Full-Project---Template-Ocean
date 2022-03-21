@@ -7,11 +7,16 @@
     <title>Template Ocean</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://use.fontawesome.com/e0dfbe267e.js"></script>
+    <link rel="icon" href="./Assets/icon.png">
 </head>
 <body>
 
-    <nav>
+<!--------------------MENU/NAVBAR--------------------->
+    <div class="toggle" id="toggle">MENU</div>
+
+    <nav id="sidebar">
         <div class="logo"><a href="#home">TEMPLATE OCEAN</a></div>
+
         <ul>
             <a href="#themes">Themes</a>
             <a href="./howItWorks.html" target="_self">How it works</a>
@@ -19,10 +24,8 @@
         </ul>
     </nav>
 
-    <div class="paypal" id="paypal">
-        <div id="close">Close</div>
-    </div>
 
+<!--------------------LANDING PAGE--------------------->
     <section id="home">
         <div class="intro">
 
@@ -34,11 +37,13 @@
         </div>
     </section>
 
+
+<!--------------------THEMES--------------------->
     <section id="themes">
         <div class="themes">
 
             <h3>Choose between the free templates below. Press download for the zip-file - stock photos are not included. 
-                If you like what you see, you can donate any amount you want via PAYPAL. <span>Thank you!</span></h3>
+                Basic understanding of HTML and CSS is required for customization of the templates. If you like what you see, you can donate any amount you want via PAYPAL. <span>Thank you!</span></h3>
             
             <div class="theme">
                 <div class="photo">
@@ -51,7 +56,7 @@
                     <div class="buttons">
                         <a href="./Downloads/Template 1.zip" download class="theme-button">Download</a>
                         <a href="https://templateocean-one.netlify.app/" target="_blank" class="theme-button">See Preview</a>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=TVQXYBSNR7YZL" class="theme-button donate" id="donate">Donate &nbsp; <i class="fa fa-paypal" aria-hidden="true"></i></a>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=TVQXYBSNR7YZL" class="theme-button donate"  target="_blank">Donate &nbsp; <i class="fa fa-paypal" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -59,7 +64,6 @@
             <div class="theme">
                 <div class="photo">
                     <img src="./Assets/Template2.jpg" alt="">
-                    <div class="overlay"></div>
                 </div>
                 <div class="description">
                     <h3>Developer Portfolio 2</h3>
@@ -67,15 +71,16 @@
                     <div class="buttons">
                         <a href="./Downloads/Template 2.zip" download class="theme-button">Download</a>
                         <a href="https://templateocean-two.netlify.app/" target="_blank" class="theme-button">See Preview</a>
-                        <a class="theme-button donate" id="donate">Donate &nbsp; <i class="fa fa-paypal" aria-hidden="true"></i></a>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=TVQXYBSNR7YZL" class="theme-button donate" target="_blank">Donate &nbsp; <i class="fa fa-paypal" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </section>
 
 
+<!--------------------JAVASCRIPT--------------------->
     <script src="script.js"></script>
 </body>
 </html>
