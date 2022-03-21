@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+/*_______COLORS________*/
+/*_______FONT SIZE______*/
+/*________MIXIN_______*/
+/*_____________Blueprints_____________*/
+h2 {
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+h2 span {
+  color: black;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h3 span {
+  font-style: italic;
+}
+
+.theme-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 28%;
+  height: 100%;
+  background: #fa5306;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.theme-button:nth-child(2) {
+  margin: 0 auto;
+}
+
+.theme-button.donate {
+  cursor: pointer;
+  border: 2px solid white;
+  background: none;
+}
+
+.theme-button:hover {
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+.paypal {
+  position: fixed;
+  z-index: 100;
+  height: 100%;
+  width: 30%;
+  top: 0;
+  left: 0;
+  background: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.paypal.active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.paypal #close {
+  position: absolute;
+  color: black;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2b2b91;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  padding: 0 5%;
+  z-index: 10;
+}
+
+nav .logo, nav a {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+nav .logo:hover, nav a:hover {
+  color: #fa5306;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30vw;
+  height: 100%;
+}
+
+nav ul a:nth-child(2) {
+  margin: 0 5vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+  text-decoration: none;
+  color: #f5efef;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  background: #2b2b91;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5vh;
+  width: 70vw;
+  height: 80vh;
+}
+
+.intro h1 {
+  font-size: 80px;
+  color: black;
+}
+
+.intro h1 span {
+  color: white;
+}
+
+.intro .explore {
+  position: relative;
+  background: #fa5306;
+  padding: 1.5rem 2.5rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.intro .explore:hover {
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+#themes {
+  height: 150vh;
+}
+
+#themes .themes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2%;
+  position: relative;
+  width: 70vw;
+  height: 80%;
+}
+
+#themes .themes h3 {
+  margin-bottom: 3%;
+}
+
+#themes .themes .theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40vh;
+  background: #1f1f6a;
+  border: 2px solid white;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#themes .themes .theme:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 11px 11px 13px -6px #1d1d1d;
+          box-shadow: 11px 11px 13px -6px #1d1d1d;
+}
+
+#themes .themes .theme:hover .photo .overlay {
+  opacity: 1;
+}
+
+#themes .themes .theme .photo {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+#themes .themes .theme .photo img, #themes .themes .theme .photo .overlay {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#themes .themes .theme .photo .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#themes .themes .theme .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10%;
+  padding: 0 2rem;
+  width: 50%;
+  height: 100%;
+}
+
+#themes .themes .theme .description .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 20%;
+}
+/*# sourceMappingURL=style.css.map */

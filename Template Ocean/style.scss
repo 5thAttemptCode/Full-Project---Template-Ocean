@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+
+@import 'plugins';
+@import 'nav';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    color: $fo-col;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    background: $bg-col;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro{
+    @include flex-col;
+    gap: 5vh;
+    width: 70vw;
+    height: 80vh;
+
+    h1{
+        font-size: 80px;
+        color: black;
+
+        span{
+            color: white;
+        }
+    }
+
+    .explore{
+        position: relative;
+        background: $a-col;
+        padding: 1.5rem 2.5rem;
+        border-radius: 20px;;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        transition: all 0.2s;
+
+        &:hover{
+            transform: rotate(-5deg);
+        }
+    }
+}
+
+#themes{
+    height: 150vh;
+
+    .themes{
+        @include flex-col;
+        gap: 2%;
+        position: relative;
+        width: 70vw;
+        height: 80%;
+
+        h3{
+            margin-bottom: 3%;
+        }
+    
+        .theme{
+            @include flex;
+            width: 100%;
+            height: 40vh;
+            background: darken($bg-col, 10%);
+            border: 2px solid white;
+            border-radius: 10px;
+            transition: all 0.3s;
+
+            &:hover{
+                transform: translateY(-5px);
+                box-shadow: 11px 11px 13px -6px rgb(29, 29, 29);
+
+                .photo{
+                    .overlay{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .photo{
+                position: relative;
+                width: 50%;
+                height: 100%;
+
+                img, .overlay{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+
+                .overlay{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 10;
+                    background: rgba(0, 0, 0, 0.3);
+                    opacity: 0;
+                    transition: all 0.3s;
+                }
+            }
+
+            .description{
+                @include flex-col;
+                gap: 10%;
+                padding: 0 2rem;
+                width: 50%;
+                height: 100%;
+
+                .buttons{
+                    @include flex-space;
+                    width: 100%;
+                    height: 20%;
+                }
+            }
+        }
+    }
+}

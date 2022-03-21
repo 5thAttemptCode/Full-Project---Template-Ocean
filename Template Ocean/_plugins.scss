@@ -1,0 +1,109 @@
+/*_______COLORS________*/
+$bg-col: rgb(43, 43, 145);
+$a-col: rgb(250, 83, 6);
+$fo-col: rgb(245, 239, 239);
+
+/*_______FONT SIZE______*/
+
+
+
+
+/*________MIXIN_______*/
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-space-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-right{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+/*_____________Blueprints_____________*/
+h2{
+    font-size: 30px;
+    line-height: 1.5;
+    text-align: justify;
+
+    span{
+        color: black;
+    }
+}
+
+h3{
+    font-size: 25px;
+
+    span{
+        font-style: italic;
+    }
+}
+
+.theme-button{
+    @include flex;
+    width: 28%;
+    height: 100%;
+    background: $a-col;
+    border-radius: 10px;
+    transition: all 0.2s;
+
+    &:nth-child(2){
+        margin: 0 auto;
+    }
+
+    &.donate{
+        cursor: pointer;
+        border: 2px solid white;
+        background: none;
+    }
+
+    &:hover{
+        transform: rotate(-5deg);
+    }
+}
+
+.paypal{
+    position: fixed;
+    z-index: 100;
+    height: 100%;
+    width: 30%;
+    top: 0;
+    left: 0;
+    background: white;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+
+    &.active{
+        transform: translateX(0%);
+    }
+
+    #close{
+        position: absolute;
+        color: black;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+    }
+}
